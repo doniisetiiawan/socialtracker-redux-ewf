@@ -35,7 +35,7 @@ const SocialActions = {
   },
 
   fetchTweets(username) {
-    fetch(`/tweets.json?username=${username}`)
+    fetch(`http://localhost:3000/tweets.json?username=${username}`)
       .then(JSONUtil.parseJSON)
       .then((json) => SocialActions.syncTweets(json))
       .catch(JSONUtil.handleParseException);
