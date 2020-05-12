@@ -21,6 +21,10 @@ class MainSection extends Component {
     );
   }
 
+  _onChange = () => {
+    this.setState(SocialStore.getState());
+  };
+
   syncFeed = () => {
     SocialActions.fetchReddits(this.state.reddit);
     SocialActions.fetchTweets(this.state.twitter);
@@ -46,7 +50,7 @@ class MainSection extends Component {
   render() {
     return (
       <Row>
-        <Col xs={8} md={8} mdOffset={2}>
+        <Col xs={12} md={12} >
           <Table striped hover>
             <thead>
               <tr>
@@ -69,7 +73,6 @@ class MainSection extends Component {
                   <Form.Control
                     onChange={this.changeTwitterSource}
                     type="text"
-                    addonBefore="@"
                     value={this.state.twitter}
                   />
                 </td>
@@ -87,18 +90,17 @@ class MainSection extends Component {
                   <Form.Control
                     onChange={this.changeRedditSource}
                     type="text"
-                    addonBefore="@"
                     value={this.state.reddit}
                   />
                 </td>
               </tr>
               <tr>
-                <th />
-                <td>
+                <td colSpan={2}>
                   <Button
-                    bsStyle="primary"
-                    bsSize="large"
+                    variant="primary"
+                    size="lg"
                     onClick={this.syncFeed}
+                    block
                   >
                     Sync Feed
                   </Button>

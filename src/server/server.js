@@ -1,5 +1,6 @@
 import Twitter from 'twitter';
 import express from 'express';
+import cors from 'cors';
 import config from './config';
 
 const client = new Twitter({
@@ -11,6 +12,8 @@ const client = new Twitter({
 
 const app = express();
 const port = 3000;
+
+app.use(cors())
 
 app.get('/', (req, res) => res.send('Hello World!'));
 

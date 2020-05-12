@@ -33,11 +33,11 @@ function mergeFeed(
     : mergedFeed;
 
   mergedFeed = _.sortBy(mergedFeed, (feedItem) => {
-    if (feedItem.type == 'tweet') {
+    if (feedItem.type === 'tweet') {
       const date = new Date(feedItem.created_at);
       return date.getTime();
     }
-    if (feedItem.type == 'reddit') {
+    if (feedItem.type === 'reddit') {
       return feedItem.created_utc * 1000;
     }
   });

@@ -1,13 +1,11 @@
 import React from 'react';
-import { Jumbotron, Row } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 
 function Header() {
   return (
-    <Row>
-      <Jumbotron className="center-text">
-        <h1>Social Media Tracker</h1>
-      </Jumbotron>
-    </Row>
+    <Jumbotron>
+      <h1>Social Media Tracker</h1>
+    </Jumbotron>
   );
 }
 

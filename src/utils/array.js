@@ -7,7 +7,7 @@ const ArrayUtil = (() => {
 
     for (let i = 0; i < len; ++i) {
       group.push(arr[i]);
-      if ((i + 1) % n == 0) {
+      if ((i + 1) % n === 0) {
         ret.push(group);
         group = [];
       }

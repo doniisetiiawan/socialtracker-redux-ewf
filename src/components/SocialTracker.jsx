@@ -32,7 +32,7 @@ class SocialTracker extends Component {
         return (
           <Row key={`${feedGroup[0].id}${index}`}>
             {feedGroup.map((feed) => {
-              if (feed.type == 'tweet') {
+              if (feed.type === 'tweet') {
                 return (
                   <Col md={4} key={feed.id}>
                     <div className="well twitter">
@@ -41,7 +41,7 @@ class SocialTracker extends Component {
                   </Col>
                 );
               }
-              const display = feed.selftext == ''
+              const display = feed.selftext === ''
                 ? `${feed.title}: ${feed.url}`
                 : feed.selftext;
               return (
