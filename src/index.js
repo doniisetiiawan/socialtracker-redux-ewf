@@ -1,15 +1,20 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import SocialTracker from './components/SocialTracker';
+import App from './containers/App';
+import configureStore from './store/configureStore';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+
+const store = configureStore();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <SocialTracker />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root'),
 );
 
